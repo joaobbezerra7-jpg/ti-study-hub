@@ -6,6 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Questão 1</h1>
+    <p>Faça um programa que conte quantos números entre 1 e 1000 são
+divisíveis por 7.</p>
+<br>
+<button id="btn">Clique no botão, e veja a mágica acontecer</button>
+<br>
+<br>
+
+<div id="resultado">
+
+</div>
+
+<script>
+    let botao = document.querySelector("#btn");
+    let resultado = document.querySelector("#resultado")
+
+    botao.addEventListener('click',function () {
+        let contador = 0;
+
+        for (let index = 1; index < 1001; index++) {
+            
+            if (index % 7 === 0) {
+                contador += 1;
+            } 
+
+            
+        }
+
+        resultado.innerHTML = `Existem ${contador} números entre 1 e 1000 que são divisiveis por 7`;
+        
+    })
+</script>
 </body>
 </html>

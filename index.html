@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h3>Repetir Frases</h3>
+
+ <label for="frase">Frase</label>
+<input type="text" name="frase" id="frase">
+<br>
+<br>
+<label for="num-repeticao">Número de repetição</label>
+<input type="text" name="num-repeticao" id="num-repeticao">
+<br>
+<br>
+<button id="btn-frase">Clique Aqui</button>
+
+
+<div id="div-frase"></div> --> 
+
+
+<h3>Lendo Array</h3>
+
+<div id="div-array">
+</div>
+
+<hr>
+
+<h3>For in</h3>
+
+<div id="div-for-in">
+</div>
+<hr>
+<h3>For of</h3>
+<div id="div-forof">
+
+</div>
+<hr>
+<h3>For EACH</h3>
+<div id="div-foreach">
+
+</div>
+<hr>
+<h4>Lista objeto literal</h4>
+
+<div id="div-listaObj-for"></div>
+<script>
+
+// const inputFrase = document.querySelector('#frase');
+// const inputNumRepeticao = document.querySelector('#num-repeticao');
+// const btnFrase = document.querySelector('#btn-frase');
+// const divFrase = document.querySelector('#div-frase');
+
+
+// btnFrase.addEventListener('click', () => {
+//     const frase = inputFrase.value;
+//     const repeticoes = Number(inputNumRepeticao.value);
+    
+//     divFrase.innerHTML = ''; 
+
+//     for (let i = 0; i < repeticoes; i++) {
+//         divFrase.innerHTML += `<p>${frase}</p>`;
+//     }
+// });
+
+
+//COLEÇÃO DE DADOS - ARRAY
+const presentes = ['Bicicleta', 'Celular', 'Camisa do Mengão', 'Pulseira', 'Tênis Adidas']
+
+const divArray = document.querySelector('#div-array');
+
+for (let i = 0; i < 5; i++) {
+    divArray.innerHTML += `${presentes[i]}, `
+    
+}
+const divForIn = document.querySelector('#div-for-in')
+
+for (let posicao in presentes) {
+   divForIn.innerHTML += `${presentes[posicao]}, `
+}
+
+const divForof = document.querySelector("#div-forof");
+
+for (const obj of presentes) {
+    divForof.innerHTML += ` ${obj}`
+}
+
+const divForEach = document.querySelector("#div-foreach")
+presentes.forEach((elemento, i) => {
+    divForEach.innerHTML += `${i} - ${elemento} <br>`
+})
+
+// COLEÇÃO DE OBJETOS LITERAIS - ARRAY
+const pessoas = [
+  { nome: 'Maria Flor', idade: 25, renda: 8500 },
+  { nome: 'Oberdan Souza', idade: 75, renda: 5000 },
+  { nome: 'Teoça', idade: 28, renda: 500 },
+  { nome: 'Chicó', idade: 36, renda: 100 },
+  { nome: 'João Grilo', idade: 37, renda: 80 }
+];
+
+// LISTANDO OBJETO LITERAL PELO FOR
+const divListaObjFor = document.querySelector('#div-listaObj-for');
+
+for (i = 0; i < pessoas.length; i++) {
+    divListaObjFor.innerHTML += `${pessoas[i].nome}, ${pessoas[i].idade} R$ ${pessoas[i].renda.toFixed(2).replace('.', ',')} <br>`;
+}
+
+
+</script>
+</body>
+</html>

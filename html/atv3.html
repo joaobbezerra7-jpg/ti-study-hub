@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de doadores</h1>
+    <h4>Faça o cadastro de 12 pessoas, e em seguida mostre os numeros totais</h4>
+    <form id="form-pessoa">
+        <label for="idade">idade</label>
+        <input type="number" id="idade" name="idade">
+        <label for="peso">peso</label>
+        <input type="number" id="peso" name="peso">
+        <p>Situação</p> <div id="div-situacao">
+
+        </div>
+        <br>
+
+    </form>
+    <button id="btn-send">Enviar</button>
+    <button type="reset">Limpar</button>
+    <br>
+    <h4>Mostrar pessoas</h4>
+    <button id="btn-mostrar">Clique para mostrar</button>
+    <div id="resultado">
+
+    </div>
+    <script>
+         const botaoCadastro = document.querySelector('#btn-send')
+        const divResultado = document.querySelector('#resultado')
+        const divSituacao = document.querySelector("#div-situacao")
+        const mostrar = document.querySelector("#btn-mostrar")
+        const resultado = document.querySelector("#resultado")
+
+            const doadores = [];
+            const naoDoadores = [];
+
+        botaoCadastro.addEventListener('click', (evt) => {
+            evt.preventDefault()
+            
+
+            let idade = document.querySelector('#idade').value;
+            let peso = document.querySelector('#peso').value;
+            
+           
+
+            const pessoa = {
+                idade: idade,
+                peso: peso
+            }
+
+            if (((pessoa.idade >= 18) && (pessoa.idade <= 60) && pessoa.peso > 50)) {
+                divSituacao.innerHTML = `Poderá doar sangue`;
+                doadores.push(pessoa)
+            } else {
+                divSituacao.innerHTML = `Não poderá doar sangue`;
+                naoDoadores.push(pessoa)
+            }
+            
+            
+        })
+
+        mostrar.addEventListener('click', function () {
+             resultado.innerHTML += `O número total de doadores é: ${doadores.length} <br>`
+             resultado.innerHTML += `O número total de não doadores é: ${naoDoadores.length}`
+
+          
+        })
+
+
+
+
+    </script>
+</body>
+</html>
