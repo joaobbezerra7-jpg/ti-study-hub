@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div id="geral">
+        <h3>For</h3>
+
+        <div id="div-for">
+
+        </div>
+    </div>
+    <hr>
+    <h2>Acumulador</h2>
+
+    <label for="num">Digite um número:</label>
+    <input type="number" name="num" id="num">
+    <br>
+    <button id="btn-num">Adicionar</button>
+    <div id="div-cont-acum"></div>
+    
+    <script>
+        // CONTADOR/ACUMULADOR
+const inputNum = document.querySelector('#num')
+const btnNum = document.querySelector('#btn-num')
+const divContAcum = document.querySelector('#div-cont-acum')
+
+let cont = 0
+let acum = 0.0
+
+btnNum.addEventListener('click', (evt) => {
+    let numDigitado = Number(inputNum.value)
+
+    cont++
+    acum += numDigitado
+
+    divContAcum.innerHTML = `TOTAL DE NÚMERO DIGITADO É: ${cont} <br>
+    A SOMA DOS NÚMEROS É: ${acum}`
+
+    inputNum.value = ''
+})
+    </script>
+</body>
+</html>
