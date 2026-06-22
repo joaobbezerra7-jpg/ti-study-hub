@@ -3,6 +3,11 @@
  const idade = document.querySelector("#idade");
  const sexo = document.querySelector("#sexo");
 
+ const pessoa = {
+    nome,
+    idade,
+    sexo,
+}
 
 
  //botões
@@ -16,14 +21,10 @@
  const divResultadoMenor = document.querySelector("#div-result-menor");
  const divResultadoMaior = document.querySelector("#div-result-maior");
  const divResultadoMeio = document.querySelector("#div-result-meio");
- const divResultadoHomem = document.querySelector("#div-result-homem")
- const divResultadoMulher = document.querySelector("#div-result-mulher")
+ const divResultadoHomem = document.querySelector("#div-result-homem");
+ const divResultadoMulher = document.querySelector("#div-result-mulher");
 
- const pessoa = {
-     nome: nome,
-     idade: idade,
-     sexo: sexo
- }
+ 
 
  let menoresIdade = [];
  let acima65 = [];
@@ -34,20 +35,22 @@
  
 
  botaoEnviar.addEventListener('click', function() {
-     if ((pessoa.idade < 18) && (pessoa.sexo === "masculino")) {
+       
+
+     if ((Number(pessoa.idade.value) <= 18) && (pessoa.sexo.value === "masculino")) {
      menoresIdade.push(pessoa);
      masculino.push(pessoa);
      console.log("passou aqui");
- } else if (((pessoa.idade >= 18) && (pessoa.idade <=65)) && (pessoa.sexo === "masculino")) {
+ } else if (((Number(pessoa.idade.value) >= 18) && (pessoa.idade <=65)) && (pessoa.sexo === "masculino")) {
      entre18e65.push(pessoa);
      masculino.push(pessoa);
- } else if ((pessoa.idade > 65) && (pessoa.sexo === "masculino")) {
+ } else if ((Number(pessoa.idade.value > 65)) && (pessoa.sexo === "masculino")) {
      acima65.push(pessoa);
      masculino.push(pessoa);
- } else if ((pessoa.idade < 18) && (pessoa.sexo === "feminino")) {
+ } else if ((Number(pessoa.idade.value) < 18) && (pessoa.sexo === "feminino")) {
      menoresIdade.push(pessoa);
      feminino.push(pessoa);
- }else if (((pessoa.idade >= 18) && (pessoa.idade <=65)) && (pessoa.sexo === "feminino")) {
+ }else if (((Number(pessoa.idade.value) >= 18) && (pessoa.idade <=65)) && (pessoa.sexo === "feminino")) {
      entre18e65.push(pessoa);
      feminino.push(pessoa);
  }else{
@@ -55,8 +58,9 @@
      feminino.push(pessoa);
  } 
 
- console.log(menoresIdade);
- console.log(feminino);
+pessoa.nome.value = "";
+pessoa.idade.value = "";
+pessoa.sexo.value = ""; 
 
 
  })

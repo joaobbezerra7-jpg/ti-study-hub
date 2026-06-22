@@ -1,0 +1,29 @@
+input{
+    display: block;
+}
+
+#campos{
+    position: relative;
+    left: 40px;
+    top: 5px;
+}
+
+#form{
+    
+    position: relative;
+    border: solid 4px;
+    width: 250px;
+    height: 150px;
+
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+#div-result-menor, #div-result-maior, #div-result-meio, #div-result-homem, #div-result-mulher{
+    border: solid 3px;
+    width: 200px;
+    height: 50px;
+    margin: 20px;
+}

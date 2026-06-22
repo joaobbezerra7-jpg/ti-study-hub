@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(190, 187, 182);
+    
+}
+
+#geral{
+    border: solid 3px black;
+    height: 500px;
+    width: 270px;
+    position: relative;
+    left: 300px;
+    top: 150px;
+    box-shadow: 15px 15px ;
+}
+
+#div-form-pessoa{
+    position: relative;
+    left: 20px;
+    top: 5px;
+}
+
+input{
+    display: block;
+}
+
+button{
+    margin: 8px;
+}
+
+#div-lista-pessoas, #div-resultado{
+    border: solid 3px;
+    margin: 20px;
+    width: 200px;
+    height: 90px;
+    text-align: center;
+}
