@@ -36,6 +36,10 @@
             <button id="btn-enviar" type="submit">Enviar</button>
             <br>
             <button id="btn-total">Total de pessoas digitadas</button>
+            <div id="resultado-total"></div>
+            <br>
+            <button id="mediaHomem">Média dos habitantes do gênero masculino</button>
+            <div id="resultado-media-homem"></div>
             <br>
             <button id="btn-mulherRenda">Quantidade de mulheres com renda entre 1000 e 3000</button>
             <br>
@@ -45,22 +49,31 @@
         </form>
     </div>
 
-    <div id="resultado-total"></div>
+    
+   
     <div id="resultado-mulheres"></div>
-    <div id="resultado-maisque"></div>
+    <div id="resultado-percentual"></div>
 
     <script>
         const form = document.querySelector("#form");
-        const resultadoTotal = document.querySelector("resultado-total");
+        const resultadoTotal = document.querySelector("#resultado-total");
+        const resultadoHomem = document.querySelector("#resultado-media-homem")
         const resultadoMulheres = document.querySelector("#resultado-mulheres")
-        const resultadoMaisque = document.querySelector("#resultado-maisque");
+        const resultadoMaisque = document.querySelector("#resultado-percentual");
+        const botaoTotal = document.querySelector("#btn-total");
+        const botaoMedia = document.querySelector("#mediaHomem");
 
 
-        const pessoa = {}
+
+        const pessoa = {};
         const Totalpessoas = [];
         const Totalmulheres = [];
         const Totalhomens = [];
+        const homem2000 = [];
+        const mulher2000 = [];
         const mulheres1000E3000 = [];
+        const homens1000E3000 = [];
+        
         
     
     
@@ -70,7 +83,7 @@
 
             const objFormdado = new FormData(form);
             const idade = objFormdado.get('idade');
-            const renda = objFormdado.get('renda');
+            const renda = parseFloat(objFormdado.get('renda'));
             const genero = objFormdado.get('genero');
 
             pessoa.idade = idade;
@@ -78,12 +91,62 @@
             pessoa.genero = genero;
 
           
-            
+            if (pessoa.genero === "masculino") {
+                Totalpessoas.push(pessoa);
+                Totalhomens.push(pessoa);
+                if (pessoa.renda >= 2000) {
+                    homem2000.push(pessoa)
+                }
+                if ((pessoa.renda >= 1000) && (pessoa.renda <= 3000)) {
+                    homens1000E3000.push(pessoa)
+                }
 
-
+            } else if (pessoa.genero === "feminino") {
+                Totalpessoas.push(pessoa);
+                Totalmulheres.push(pessoa);
+                if (pessoa.renda >= 2000) {
+                    mulher2000.push(pessoa)
+                }
+                if ((pessoa.renda >= 1000) && (pessoa.renda <= 3000)) {
+                    mulheres1000E3000.push(pessoa)
+                }
+            } 
+         
 
            
-        })
+        });
+
+        botaoTotal.addEventListener('click',(evt) => {
+            resultadoTotal.innerHTML += Totalpessoas.length;
+        });
+
+        botaoMedia.addEventListener('click',(evt) =>{
+            let acc = 0;
+            const divisor = Totalhomens.length;
+            for (const elemento of Totalhomens) {
+                acc += elemento.renda;
+               
+                
+            }
+             
+            //  console.log(Totalhomens.length);
+            //  console.log(acc / (Totalhomens.length));
+            // resultadoHomem.innerHTML = acc / divisor;
+
+
+            console.log(acc);
+            console.log(divisor);
+            console.log(acc / divisor);
+            
+            
+        });
+
+
+
+
+
+        
+
     </script>
 
 
