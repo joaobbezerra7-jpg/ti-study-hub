@@ -38,6 +38,7 @@
             <button id="btn-mulherRenda">Quantidade de mulheres com renda entre 1000 e 3000</button>
             <br>
             <button id="btn-percentualMaior"> Percentual quem ganha mais que 2000</button>
+            
 
         </form>
     </div>
@@ -51,6 +52,33 @@
         const resultadoTotal = document.querySelector("resultado-total");
         const resultadoMulheres = document.querySelector("#resultado-mulheres")
         const resultadoMaisque = document.querySelector("#resultado-maisque");
+
+
+        
+    
+
+        form.addEventListener('submit', (evt) =>{
+            evt.preventDefault()
+
+            const objFormdado = new FormData(form);
+            const idade = objFormdado.get('idade');
+            const renda = objFormdado.get('renda');
+            const genero = objFormdado.get('genero');
+
+            const pessoa = {
+                idade,
+                renda,
+                genero
+            }
+
+            const Totalpessoas = [];
+            const mulheres = [];
+            const homens = [];
+
+
+
+           
+        })
     </script>
 
 
