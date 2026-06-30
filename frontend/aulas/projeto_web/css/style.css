@@ -42,3 +42,9 @@ p{
 .parágrafo{
     text-decoration: line-through;
 }
+
+img{
+    width: 400px;
+    height: 200px;
+    border-radius: 100px;
+}
