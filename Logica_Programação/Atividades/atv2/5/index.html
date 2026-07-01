@@ -43,8 +43,11 @@
             <div id="resultado-media-homem"></div>
             <br>
             <button id="btn-mulherRenda">Quantidade de mulheres com renda entre 1000 e 3000</button>
+            <div id="resultado-mulheres"></div>
             <br>
-            <button id="btn-percentualMaior"> Percentual quem ganha mais que 2000</button>
+            <button id="btn-percentual"> Percentual quem ganha mais que 2000</button>
+            <div id="resultado-percentual-homem"></div>
+            <div id="resultado-percentual-mulher"></div>
        
 
        
@@ -52,17 +55,21 @@
 
     
    
-    <div id="resultado-mulheres"></div>
-    <div id="resultado-percentual"></div>
+  
+    
 
     <script>
         const form = document.querySelector("#form");
         const resultadoTotal = document.querySelector("#resultado-total");
         const resultadoHomem = document.querySelector("#resultado-media-homem")
         const resultadoMulheres = document.querySelector("#resultado-mulheres")
-        const resultadoMaisque = document.querySelector("#resultado-percentual");
+        const resultadoPercentualHomem =document.querySelector("#resultado-percentual-homem")
+        const resultadoPercentualMulher =document.querySelector("#resultado-percentual-mulher")
+        
         const botaoTotal = document.querySelector("#btn-total");
         const botaoMedia = document.querySelector("#mediaHomem");
+        const botaoMulheres1000e3000 = document.querySelector("#btn-mulherRenda")
+        const botaoPercentual = document.querySelector("#btn-percentual")
 
 
        
@@ -72,7 +79,7 @@
         const homem2000 = [];
         const mulher2000 = [];
         const mulheres1000E3000 = [];
-        const homens1000E3000 = [];
+     
 
         form.addEventListener('submit', (evt) =>{
             evt.preventDefault()
@@ -117,10 +124,6 @@
 
         botaoTotal.addEventListener('click',(evt) => {
             resultadoTotal.innerHTML = Totalpessoas.length;
-            console.log(Totalpessoas);
-            console.log(Totalpessoas.length);
-            console.log(mulher2000);
-            console.log(mulher2000.length);
         });
 
         botaoMedia.addEventListener('click',(evt) =>{
@@ -134,12 +137,19 @@
     
         });
 
+        botaoMulheres1000e3000.addEventListener('click', (evt) => {
+            resultadoMulheres.innerHTML = mulheres1000E3000.length;
+        })
 
-
-
-
+       
         
 
+        botaoPercentual.addEventListener('click', (evt) => {
+            resultadoPercentualHomem.innerHTML = `${(homem2000.length / Totalpessoas.length) * 100}% dos homens ganham 2000 ou mais`;
+            resultadoPercentualMulher.innerHTML = `${(mulher2000.length / Totalpessoas.length) * 100}% das mulheres ganham 2000 ou mais`;
+
+
+        })
     </script>
 
 
