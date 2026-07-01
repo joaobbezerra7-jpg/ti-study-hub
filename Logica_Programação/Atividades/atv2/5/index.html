@@ -35,6 +35,7 @@
             <br>
             <button id="btn-enviar" type="submit">Enviar</button>
             <br>
+        </form>
             <button id="btn-total">Total de pessoas digitadas</button>
             <div id="resultado-total"></div>
             <br>
@@ -44,9 +45,9 @@
             <button id="btn-mulherRenda">Quantidade de mulheres com renda entre 1000 e 3000</button>
             <br>
             <button id="btn-percentualMaior"> Percentual quem ganha mais que 2000</button>
-            
+       
 
-        </form>
+       
     </div>
 
     
@@ -64,8 +65,7 @@
         const botaoMedia = document.querySelector("#mediaHomem");
 
 
-
-        const pessoa = {};
+       
         const Totalpessoas = [];
         const Totalmulheres = [];
         const Totalhomens = [];
@@ -73,10 +73,6 @@
         const mulher2000 = [];
         const mulheres1000E3000 = [];
         const homens1000E3000 = [];
-        
-        
-    
-    
 
         form.addEventListener('submit', (evt) =>{
             evt.preventDefault()
@@ -86,13 +82,17 @@
             const renda = parseFloat(objFormdado.get('renda'));
             const genero = objFormdado.get('genero');
 
-            pessoa.idade = idade;
-            pessoa.renda = renda;
-            pessoa.genero = genero;
+            const pessoa = {
+                idade,
+                renda,
+                genero,
+            };
+            
 
-          
+            
+            Totalpessoas.push(pessoa);
+
             if (pessoa.genero === "masculino") {
-                Totalpessoas.push(pessoa);
                 Totalhomens.push(pessoa);
                 if (pessoa.renda >= 2000) {
                     homem2000.push(pessoa)
@@ -102,7 +102,6 @@
                 }
 
             } else if (pessoa.genero === "feminino") {
-                Totalpessoas.push(pessoa);
                 Totalmulheres.push(pessoa);
                 if (pessoa.renda >= 2000) {
                     mulher2000.push(pessoa)
@@ -117,30 +116,22 @@
         });
 
         botaoTotal.addEventListener('click',(evt) => {
-            resultadoTotal.innerHTML += Totalpessoas.length;
+            resultadoTotal.innerHTML = Totalpessoas.length;
+            console.log(Totalpessoas);
+            console.log(Totalpessoas.length);
+            console.log(mulher2000);
+            console.log(mulher2000.length);
         });
 
         botaoMedia.addEventListener('click',(evt) =>{
             let acc = 0;
-            // // const divisor = Totalhomens.length;
+           
             for (const elemento of Totalhomens) {
-                
-                acc = acc + elemento.renda;
-                // 0 = 0 + 20
-                // 20 = 20 + 30
-                // 50 +
-                
+                acc = acc + elemento.renda;  
             }
              
-            //  console.log(Totalhomens.length);
-            //  console.log(acc / (Totalhomens.length));
-            // resultadoHomem.innerHTML = acc / divisor;
-
-            // console.log(acc)
-            
-            
-            console.log(acc);
-            
+        resultadoHomem.innerHTML = acc / (Totalhomens.length);
+    
         });
 
 
