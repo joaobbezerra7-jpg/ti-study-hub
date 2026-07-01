@@ -122,10 +122,13 @@
 
         botaoMedia.addEventListener('click',(evt) =>{
             let acc = 0;
-            const divisor = Totalhomens.length;
+            // // const divisor = Totalhomens.length;
             for (const elemento of Totalhomens) {
-                acc += elemento.renda;
-               
+                
+                acc = acc + elemento.renda;
+                // 0 = 0 + 20
+                // 20 = 20 + 30
+                // 50 +
                 
             }
              
@@ -133,11 +136,10 @@
             //  console.log(acc / (Totalhomens.length));
             // resultadoHomem.innerHTML = acc / divisor;
 
-
-            console.log(acc);
-            console.log(divisor);
-            console.log(acc / divisor);
+            // console.log(acc)
             
+            
+            console.log(acc);
             
         });
 
