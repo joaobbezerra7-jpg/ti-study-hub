@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/script_veiculo.js" type="module" defer></script>
+    <style>
+        input{
+            display: block;
+        }
+    </style>
+    <title>Cadastro de veiculos</title>
+</head>
+<body>
+    <h1>Cadastro de veiculos</h1>
+    <h3>Informe os dados do veiculo</h3>
+
+    <form id="form">
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo" name="modelo">
+    <label for="marca">Marca:</label>
+    <input type="text" id="marca" name="marca">
+    <label for="placa">Placa:</label>
+    <input type="text" id="placa" name="placa">
+    <label for="ano">Ano de Fabricação</label>
+    <input type="number" id="ano" name="ano">
+    <label for="valor">Valor de mercado</label>
+    <input type="number" id="valor" name="valor">
+    <select name="tipo" id="tipo">
+        <option value="G">Gasolina</option>
+        <option value="E">Etanol</option>
+        <option value="bio">Biocombustível</option>
+        <option value="H">Híbrido</option>
+        <option value="ELE">Elétrico</option>
+    </select>
+    <button id="btn-enviar" type="submit">Enviar</button>
+    
+    </form>
+<div id="resultado">
+
+</div>
+
+</body>
+</html>
