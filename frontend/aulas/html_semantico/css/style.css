@@ -1,48 +1,206 @@
-/* Importando a fonte das letras do google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
 
-
-/* Configuração em todos os elementos */
+/* Reset */
 
 *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: roboto;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Roboto;
 }
 
-/* Criando variáveis */
+/* Variáveis */
+
 :root{
-    --cor01: #f7f08e;
-    --cor02: #eea95a;
-    --cor03: #faa638;
+    --cor01:#f7f08e;
+    --cor02:#eea95a;
+    --cor03:#faa638;
     --branca:#ffffff;
 }
 
-/* Formatando a main pelo ID */
+/* Corpo */
+
+body{
+    background:#f5f5f5;
+}
+
+h1{
+    text-align:center;
+    margin:20px 0;
+}
+
 #geral{
-    margin: 20px;
+    width:100%;
+    margin:auto;
+    /* display: flex;
+    justify-content: center; */
 }
 
-/* Formatando o cabeçalho */
+/* Cabeçalho */
+
 #cabecalho{
-    background-color: #f7f08e;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 20px;
-    
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#ff01ea;
+    border-radius:8px;
 }
 
-/* Configurando menu na horizontal */
-#menu ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
+#logo{
+    font-size:1.5rem;
+    font-weight:bold;
 }
 
-#menu ul img{
-    width: 25px;
-    height: 25px;
+/* Menu */
+
+#menu ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+#menu a{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+#menu img{
+    width:22px;
+    height:22px;
+}
+
+/* Pesquisa */
+
+#pesquisa{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:150px;
+    margin:20px 0;
+    background:var(--cor01);
+    border-radius:8px;
+}
+
+#pesquisa input{
+    width:60%;
+    max-width:600px;
+    height:45px;
+    padding:10px;
+    border:1px solid var(--cor02);
+    border-radius:8px;
+    font-size:1rem;
+}
+
+#pesquisa input::placeholder{
+    color:var(--cor02);
+    font-style:italic;
+}
+
+/* Cards */
+
+#cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:20px;
+    justify-items:center;
+    margin-bottom:30px;
+    width: 1000px;
+    min-height: 800px;
+}
+
+.card{
+    width:100%;
+    max-width:250px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:5px;
+    border:1px solid var(--cor02);
+    border-radius:8px;
+    background:white;
+    text-align:center;
+}
+
+.card img{
+    width:150px;
+    height:200px;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.card p{
+    font-size:1rem;
+    margin-bottom:10px;
+    text-transform:uppercase;
+}
+
+.card h2{
+    color:var(--cor03);
+    margin-bottom:15px;
+}
+
+.btn-add{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    background:var(--cor03);
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-add:hover{
+    opacity:0.9;
+}
+
+/* Rodapé */
+
+#rodape{
+    text-align:center;
+    padding:20px;
+    background:#ddd;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+#rodape h2{
+    font-size:1rem;
+    margin-bottom:10px;
+}
+
+/* LINKS */
+#menu a:link{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor01);
+}
+#menu a:visited{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor02);
+}
+#menu a:active{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor03);
+}
+
+#menu a:hover{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor03);
 }

@@ -1,49 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lojinha</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
+
     <h1>Loja Virtual</h1>
     <hr>
+
     <main id="geral">
+
         <header id="cabecalho">
             <div id="logo">
-                logo aqui
+                Logo aqui
             </div>
+
             <nav id="menu">
                 <ul>
                     <li><a href="paginas/cadastro.html">Cadastro</a></li>
                     <li><a href="paginas/sobre.html">Sobre</a></li>
-                    <li><a href="paginas/login.html">login</a></li>
-                    <li><a href="paginas/carrinho.html"> <img src="iconeDecarrinho" alt="icone">Carrinho</a></li>
+                    <li><a href="paginas/login.html">Login</a></li>
+                    <li>
+                        <a href="paginas/carrinho.html">
+                            <img src="iconeDecarrinho" alt="Ícone do carrinho">
+                            Carrinho
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
 
         <section id="pesquisa">
-            <input type="text" name="pesquisa" id="pesquisa" class="input-pesquisa">
+            <input
+                type="text"
+                id="input-pesquisa"
+                class="input-pesquisa"
+                placeholder="Pesquisar produto">
         </section>
-        <br>
-
 
         <section id="cards">
+
             <div class="card">
-                <img src="./imagens/linux.jpg" alt="descrição da imagem">
-                <p>Nome do produto</p>
+                <img src="./imagens/linux.jpg" alt="Produto">
+                <p>Nome do Produto</p>
                 <h2>R$ 50,00</h2>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
+            <div class="card">
+                <img src="./imagens/linux.jpg" alt="Produto">
+                <p>Nome do Produto</p>
+                <h2>R$ 50,00</h2>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
+            <div class="card">
+                <img src="./imagens/linux.jpg" alt="Produto">
+                <p>Nome do Produto</p>
+                <h2>R$ 50,00</h2>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
+            <div class="card">
+                <img src="./imagens/linux.jpg" alt="Produto">
+                <p>Nome do Produto</p>
+                <h2>R$ 50,00</h2>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
+            <div class="card">
+                <img src="./imagens/linux.jpg" alt="Produto">
+                <p>Nome do Produto</p>
+                <h2>R$ 50,00</h2>
+                <button class="btn-add">Adicionar</button>
             </div>
             
+            <div class="card">
+                <img src="./imagens/linux.jpg" alt="Produto">
+                <p>Nome do Produto</p>
+                <h2>R$ 50,00</h2>
+                <button class="btn-add">Adicionar</button>
+            </div>
+
         </section>
+
         <footer id="rodape">
-            <h2>&copy 2026 sua loja Todos os direitos reservados</h2>
-            <p>Formas de pagamento: Pix,cartão e escambo</p>
+            <h2>&copy; 2026 Sua Loja - Todos os direitos reservados</h2>
+            <p>Formas de pagamento: Pix, Cartão e Escambo.</p>
         </footer>
-        
+
     </main>
+
 </body>
 </html>
