@@ -1,38 +1,148 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/form_style.css">
+
     <title>Formulario Loja</title>
+
 </head>
+
 <body>
-    <h2>Formulário da Loja virtual</h2>
+
+    <header>
+
+        <div id="logo">
+
+logo aqui
+
+        </div>
+
+
+
+        
+            <a href="#">Loja</a>
+
+        <a href="#">Sobre Nós</a>
+
+        <a href="#">Fale conosco</a>
+
+        <a href="#">Cadastro</a>
+
+        <a href="#">Login</a>
+       
+
+    </header>
+
+
+
+
 
     <main>
-        <label for="nome">Nome Completo*</label>
-        <input type="text" id="nome" name="nome" required>
+
+       
+
+        <div id="card-titulo">
+
+            <h3>Cadastre seus dados pessoais</h3>
+
+        </div>
+
+        <form id="form">
+
+            <label for="nome">Nome Completo*</label>
+
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+
         <label for="cpf">CPF*</label>
-        <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+
+        <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF"  required>
+
         <label for="telefone">Telefone</label>
-        <input type="number" id="telefone" name="telefone">
+
+        <input type="number" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
+
         <label for="email">E-mail*</label>
-        <input type="email" id="email" name="email" placeholder="E-mail" required>
+
+        <input type="email" id="email" name="email" placeholder="Digite o E-mail" required>
+
         <label for="DN">Data de Nascimento*</label>
-        <input type="date">
+
+        <input type="date" id="DN" name="DN" required>
+
         <label for="cep">CEP*</label>
-        <input type="number" id="cep" name="cep">
+
+        <input type="number" id="cep" name="cep" placeholder="Digite o CEP" required>
+
         <label for="logradouro">Logradouro*</label>
-        <input type="text" id="logradouro" name="logradouro">
+
+        <input type="text" id="logradouro" name="logradouro" placeholder="Digite o logradouro" required>
+
         <label for="number">Número*</label>
-        <input type="number" id="number" name="number">
+
+        <input type="number" id="number" name="number" placeholder="Digite seu Número" required>
+
         <label for="complemento">Complemento</label>
-        <input type="text" id="complemento" name="complemento">
+
+        <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento" required>
+
         <label for="bairro">Bairro*</label>
-        <input type="text" id="bairro" name="bairro">
+
+        <input type="text" id="bairro" name="bairro" placeholder="Digite o Bairro" required>
+
         <label for="cidade">Cidade*</label>
-        <input type="text" id="cidade" name="cidade">
-        
+
+        <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade" required>
+
+        <label for="estado">Estado:*</label>
+
+        <input type="text" id="estado" name="estado" placeholder="Digite o Estado">
+
+        <label for="senha">Senha</label>
+
+        <input type="password" id="senha" name="senha" placeholder="Digite a Senha" required>
+
+        <input type="checkbox" required> Deseja receber nossas ofertas através de WhatsApp?
+
+        <button id="btn-cadastro" type="submit">Cadastre</button>
+
+        <button id="btn-login" type="submit">Login</button>
+
+        </form>
 
     </main>
+
+
+
+
+
+        
+
+        <footer>
+
+            Rural orgânico
+
+
+
+            pagamentos: pix,crédito,débito
+
+
+
+            contatos: email,numero,endereço
+
+
+
+            todos os direitos protegidos
+
+        </footer>
+
+    
+
 </body>
+
 </html>

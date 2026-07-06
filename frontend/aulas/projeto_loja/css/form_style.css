@@ -1,0 +1,27 @@
+#card-titulo{
+    background-color: chocolate;
+    color: aliceblue;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="password"],input[type="number"],input[type="date"], select {
+    display: block;
+}
+
+input{
+    border: solid 2px gray;
+}
+
+#form{
+   position: relative;
+   left: 810px;
+   top: 20px;
+   margin: 10px;
+}
+
