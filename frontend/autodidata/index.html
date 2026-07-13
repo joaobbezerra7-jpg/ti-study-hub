@@ -2,45 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
     <style>
-        .pai {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 200px;
+            margin: 0 auto;
+            border: solid 2px;
+            background-color: lightblue;
         }
-            
-            
-            
-
-        
-
-        .filho1 {
-            
-             grid-column: 1 / 3;
-
+        .item{
+            border: solid 2px;
+            background-color: antiquewhite;
+            width: 40px;
+            height: 40px;
         }
 
+        .a{
+            flex-basis: 100px ;
+            flex-grow: 2;
+            
+        }
+
+        .b{
+            flex-basis: 200px;
+        }
+
+        .c{
+            flex-basis: 300px;
+        }
+
+        /* O item a não diminuiu, o item c diminuiu mais */
     </style>
 </head>
 <body>
-    <h1>Grid</h1>
-    <hr>
-    <div class="pai">
-        <div class="filho1">1</div>
-        <div class="filho">2</div>
-        <div class="filho">3</div>
-        <div class="filho">4</div>
-        <div class="filho">5</div>
-        <div class="filho">6</div>
-        <div class="filho">7</div>
-        <div class="filho">8</div>
-        <div class="filho">9</div>
-        <div class="filho">10</div>
-        <div class="filho">11</div>
-        <div class="filho">12</div>
-        
+    <div class="container">
+        <div class="item a">1</div>
+        <div class="item b">2</div>
+        <div class="item c">3</div>
     </div>
 </body>
 </html>
