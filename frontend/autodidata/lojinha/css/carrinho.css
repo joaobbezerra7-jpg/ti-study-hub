@@ -1,0 +1,87 @@
+#rodape{
+    text-align:center;
+    padding:20px;
+    background:#ddd;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+#rodape h2{
+    font-size:1rem;
+    margin-bottom:10px;
+}
+
+#cabecalho{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#29cfec;
+    border-radius:8px;
+}
+
+#menu a:link{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor01);
+}
+#menu a:visited{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor02);
+}
+#menu a:active{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor01);
+}
+
+#menu a:hover{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor01);
+}
+
+#menu ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+#menu a{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+#menu img{
+    width:22px;
+    height:22px;
+}
+
+.item{
+    border: solid 3px;
+    width: 300px;
+    margin: 2%;
+    background-color: antiquewhite;
+}
+
+img{
+    width: 100px;
+    border: solid 2px;
+    border-radius: 30px;
+    position: relative;
+    left: 100px;
+
+}

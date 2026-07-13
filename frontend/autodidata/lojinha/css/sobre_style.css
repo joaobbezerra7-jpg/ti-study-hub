@@ -1,0 +1,46 @@
+#cabecalho{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#29cfec;
+    border-radius:8px;
+}
+
+#menu ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+#menu a{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+#menu img{
+    width:22px;
+    height:22px;
+}
+
+body{
+    background-color:antiquewhite;
+}
+
+
+#rodape{
+    text-align:center;
+    padding:20px;
+    background:#ddd;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+#rodape h2{
+    font-size:1rem;
+    margin-bottom:10px;
+}

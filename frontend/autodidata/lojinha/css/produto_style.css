@@ -1,0 +1,241 @@
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Roboto;
+}
+
+/* Variáveis */
+
+:root{
+    --cor01:#323dd3;
+    --cor02:#eea95a;
+    --cor03:#faa638;
+    --branca:#ffffff;
+}
+
+/* Corpo */
+
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    text-align:center;
+    margin:20px 0;
+}
+
+#descricao{
+    font-size: smaller;
+}
+
+#geral{
+    width:100%;
+    margin:auto;
+    /* display: flex;
+    justify-content: center; */
+}
+
+/* Cabeçalho */
+
+#cabecalho{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#29cfec;
+    border-radius:8px;
+}
+
+#logo{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+/* Menu */
+
+    #menu ul{
+        display:flex;
+        gap:30px;
+        list-style:none;
+    }
+
+    #menu a{
+        display:flex;
+        align-items:center;
+        gap:5px;
+        text-decoration:none;
+        color:black;
+        font-weight:bold;
+    }
+
+    #menu img{
+        width:22px;
+        height:22px;
+    }
+
+/* Pesquisa */
+
+#menu-secoes{
+    display: flex;
+    justify-content:space-between;
+    align-items:center; 
+    margin: 40px;
+    
+}
+
+#menu-secoes a{
+    color: #113cff;
+}
+
+.card button:hover{
+    width: 200px;
+    background-color: greenyellow;
+}
+
+li:hover{
+    font-size: large;
+}
+
+#pesquisa{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:150px;
+    margin:20px 0;
+    background:var(--cor01);
+    border-radius:8px;
+}
+
+#pesquisa input{
+    width:60%;
+    max-width:600px;
+    height:45px;
+    padding:10px;
+    border:1px solid var(--cor01);
+    border-radius:8px;
+    font-size:1rem;
+}
+
+#pesquisa input::placeholder{
+    color:var(--cor02);
+    font-style:italic;
+}
+
+/* Cards */
+
+#cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:20px;
+    justify-items:center;
+    margin-bottom:30px;
+    width: 1000px;
+    min-height: 800px;
+}
+
+.card{
+    width:100%;
+    max-width:250px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+   
+    padding:5px;
+    border:1px solid var(--cor01);
+    border-radius:8px;
+    background:rgb(255, 255, 255);
+    text-align:center;
+}
+
+.card:hover{
+    width: 900px;
+}
+
+
+
+.card img{
+    width:150px;
+    height:200px;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.card p{
+    font-size:1rem;
+    margin-bottom:10px;
+    text-transform:uppercase;
+}
+
+.card h2{
+    color:var(--cor03);
+    margin-bottom:15px;
+}
+
+.btn-add{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    background:var(--cor03);
+    cursor:pointer;
+    font-weight:bold;
+    
+    
+}
+
+.btn-add:hover{
+    opacity:0.9;
+}
+
+/* Rodapé */
+
+#rodape{
+    text-align:center;
+    padding:20px;
+    background:#ddd;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+#rodape h2{
+    font-size:1rem;
+    margin-bottom:10px;
+}
+
+/* LINKS */
+#menu a:link{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor01);
+}
+#menu a:visited{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor02);
+}
+#menu a:active{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor01);
+}
+
+#menu a:hover{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor01);
+}
+

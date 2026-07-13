@@ -1,129 +1,244 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/form_style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Formulario Loja</title>
+<title>Cadastro | Anime Store</title>
+
+<link rel="stylesheet" href="../css/form_style.css">
 
 </head>
 
 <body>
 
-    <header id="cabecalho">
+<header id="cabecalho">
 
-        <div id="logo">
+<div id="logo">
 
-logo aqui
+Anime Store
 
-        </div>
+</div>
 
+<nav id="menu">
 
+<ul>
 
-        
-            <a href="../html/produtos.html">Loja</a>
+<li><a href="produtos.html">Produtos</a></li>
 
-        <a href="../html/sobre.html">Sobre Nós</a>
+<li><a href="sobre.html">Sobre</a></li>
 
-        <a href="#">Fale conosco</a>
+<li><a href="carrinho.html">🛒 Carrinho</a></li>
 
-        <a href="">Cadastro</a>
+</ul>
 
-        <a href="#">Login</a>
-       
+</nav>
 
-    </header>
+</header>
 
+<main>
 
+<section class="banner">
 
+<h1>Cadastro</h1>
 
+<p>
 
-    <main>
+Crie sua conta para acompanhar pedidos e comprar seus colecionáveis.
 
-       
+</p>
 
-        <div id="card-titulo">
+</section>
 
-            <h3>Cadastre seus dados pessoais</h3>
+<section class="container">
 
-        </div>
+<form id="form">
 
-        <form id="form">
+<h2>Dados Pessoais</h2>
 
-            <label for="nome">Nome Completo*</label>
+<div class="linha">
 
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+<div class="campo">
 
-        <label for="cpf">CPF*</label>
+<label>Nome Completo</label>
 
-        <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF"  required>
+<input type="text" required>
 
-        <label for="telefone">Telefone</label>
+</div>
 
-        <input type="number" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
+</div>
 
-        <label for="email">E-mail*</label>
+<div class="linha">
 
-        <input type="email" id="email" name="email" placeholder="Digite o E-mail" required>
+<div class="campo">
 
-        <label for="DN">Data de Nascimento*</label>
+<label>CPF</label>
 
-        <input type="date" id="DN" name="DN" required>
+<input type="text" required>
 
-        <label for="cep">CEP*</label>
+</div>
 
-        <input type="number" id="cep" name="cep" placeholder="Digite o CEP" required>
+<div class="campo">
 
-        <label for="logradouro">Logradouro*</label>
+<label>Telefone</label>
 
-        <input type="text" id="logradouro" name="logradouro" placeholder="Digite o logradouro" required>
+<input type="tel">
 
-        <label for="number">Número*</label>
+</div>
 
-        <input type="number" id="number" name="number" placeholder="Digite seu Número" required>
+</div>
 
-        <label for="complemento">Complemento</label>
+<div class="linha">
 
-        <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento" required>
+<div class="campo">
 
-        <label for="bairro">Bairro*</label>
+<label>E-mail</label>
 
-        <input type="text" id="bairro" name="bairro" placeholder="Digite o Bairro" required>
+<input type="email" required>
 
-        <label for="cidade">Cidade*</label>
+</div>
 
-        <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade" required>
+</div>
 
-        <label for="estado">Estado:*</label>
+<div class="linha">
 
-        <input type="text" id="estado" name="estado" placeholder="Digite o Estado">
+<div class="campo">
 
-        <label for="senha">Senha</label>
+<label>Data de Nascimento</label>
 
-        <input type="password" id="senha" name="senha" placeholder="Digite a Senha" required>
+<input type="date">
 
-        <input type="checkbox" required> Deseja receber nossas ofertas através de WhatsApp?
+</div>
 
-        <button id="btn-cadastro" type="submit">Cadastre</button>
+</div>
 
-        <button id="btn-login" type="submit">Login</button>
+<h2>Endereço</h2>
 
-        </form>
+<div class="linha">
 
-    </main>
+<div class="campo">
 
+<label>CEP</label>
 
-    <footer id="rodape">
-        <h2>&copy; 2026 Sua Loja - Todos os direitos reservados</h2>
-        <p>Formas de pagamento: Pix, Cartão e Escambo.</p>
-    </footer>
+<input type="text">
 
-    
+</div>
+
+<div class="campo">
+
+<label>Número</label>
+
+<input type="number">
+
+</div>
+
+</div>
+
+<div class="linha">
+
+<div class="campo">
+
+<label>Logradouro</label>
+
+<input type="text">
+
+</div>
+
+</div>
+
+<div class="linha">
+
+<div class="campo">
+
+<label>Complemento</label>
+
+<input type="text">
+
+</div>
+
+</div>
+
+<div class="linha">
+
+<div class="campo">
+
+<label>Bairro</label>
+
+<input type="text">
+
+</div>
+
+<div class="campo">
+
+<label>Cidade</label>
+
+<input type="text">
+
+</div>
+
+</div>
+
+<div class="linha">
+
+<div class="campo">
+
+<label>Estado</label>
+
+<input type="text">
+
+</div>
+
+</div>
+
+<h2>Segurança</h2>
+
+<div class="linha">
+
+<div class="campo">
+
+<label>Senha</label>
+
+<input type="password">
+
+</div>
+
+</div>
+
+<label class="check">
+
+<input type="checkbox">
+
+Desejo receber ofertas e novidades.
+
+</label>
+
+<button type="submit">
+
+Criar Conta
+
+</button>
+
+</form>
+
+</section>
+
+</main>
+
+<footer id="rodape">
+
+<h3>© 2026 Anime Store</h3>
+
+<p>
+
+Pagamento via Pix, Cartão e Boleto.
+
+</p>
+
+</footer>
 
 </body>
 

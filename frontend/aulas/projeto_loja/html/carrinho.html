@@ -1,103 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carrinho | Anime Store</title>
+
     <link rel="stylesheet" href="../css/carrinho.css">
-    <title>Document</title>
+
 </head>
+
 <body>
-    <header id="cabecalho">
-        <div id="logo">
-            Logo aqui
-        </div>
 
-        <nav id="menu">
-            <ul>
-                <li><a href="form.html">Cadastro</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li>
-                    <a href="carrinho.html">
-                        <img src="iconeDecarrinho" alt="Ícone do carrinho">
-                        Carrinho
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<header id="cabecalho">
 
-    <main>
-        <!-- Seção de Pesquisa -->
-<section id="pesquisa">
-    <h1>Carrinho</h1>
+    <div id="logo">
+        Anime Store
+    </div>
+
+    <nav id="menu">
+
+        <ul>
+
+            <li><a href="form.html">Cadastro</a></li>
+
+            <li><a href="produtos.html">Produtos</a></li>
+
+            <li><a href="sobre.html">Sobre</a></li>
+
+            <li><a href="carrinho.html">🛒 Carrinho</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="banner">
+
+    <h1>🛒 Meu Carrinho</h1>
+
+    <p>
+        Confira seus produtos antes de finalizar a compra.
+    </p>
+
 </section>
 
-<!-- Seção do Carrinho -->
-<section id="carrinho">
+
+<section class="container">
+
     <section id="itens-carrinho">
-        <section class="item">
-            <div class="img-item">
-                <!-- <img src="../images/0two.jpg" alt="0two"> -->
+
+        <article class="item">
+
+            <img src="../images/0two.jpg" alt="Zero Two">
+
+            <div class="info">
+
+                <h3>Zero Two</h3>
+
+                <p>Darling in the Franxx</p>
+
+                <span>R$ 100,00</span>
+
             </div>
 
-            <div id="descricao-item">
-                <div class="descricao">
-                    <img src="../images/0two.jpg" alt="">
-                </div>
+            <div class="quantidade">
+
+                <label>Qtd.</label>
+
+                <input type="number" value="1" min="1">
+
             </div>
 
-            <div class="valores">
-                <p>R$ 45,00 (Preço unitário)</p>
-                <div class="input-quantidade">
-                    <input type="number" name="quant01" id="quant01" class="input-item" value="1">
-                </div>
-                <p> Sub total: R$ 45,00</p>
-                <p> Valor frete: R$ 00,00</p>
-                <div class="img-remover">
-                    <img src="../imagens/icones/remover.png" alt="">
-                </div>
-            </div>
-        </section>
-        <section class="item">
-            <div class="img-item">
-                <!-- <img src="../images/0two.jpg" alt="0two"> -->
+            <div class="subtotal">
+
+                <strong>Subtotal</strong>
+
+                <p>R$ 100,00</p>
+
+                <button>Remover</button>
+
             </div>
 
-            <div id="descricao-item">
-                <div class="descricao">
-                    <img src="../images/0two.jpg" alt="">
-                </div>
-            </div>
+        </article>
 
-            <div class="valores">
-                <p>R$ 45,00 (Preço unitário)</p>
-                <div class="input-quantidade">
-                    <input type="number" name="quant01" id="quant01" class="input-item" value="1">
-                </div>
-                <p> Sub total: R$ 45,00</p>
-                <p> Valor frete: R$ 00,00</p>
-                <div class="img-remover">
-                    <img src="../imagens/icones/remover.png" alt="">
-                </div>
-            </div>
-        </section>
     </section>
 
-    <div id="valores-carrinho">
-        <div id="div-total">
-            <h2 class="titulo-valor">Total</h2>
-        </div>
-    </div>
+
+
+    <aside id="resumo">
+
+        <h2>Resumo da Compra</h2>
+
+        <p>Produtos <span>R$ 100,00</span></p>
+
+        <p>Frete <span>Grátis</span></p>
+
+        <hr>
+
+        <h3>Total <span>R$ 100,00</span></h3>
+
+        <button>
+
+            Finalizar Compra
+
+        </button>
+
+    </aside>
+
 </section>
 
-<!-- Rodapé -->
+</main>
+
+
 <footer id="rodape">
-    <h5>&copy; 2024 Sustare S.A. Todos os direitos reservados.</h5>
-    <p>Formas de pagamento: Pix, Cartões de Débito e Crédito.</p>
+
+    <h3>© 2026 Anime Store</h3>
+
+    <p>Pagamento via Pix, Cartão e Boleto.</p>
+
 </footer>
 
-    </main>
-
 </body>
+
 </html>

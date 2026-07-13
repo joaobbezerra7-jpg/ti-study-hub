@@ -1,39 +1,84 @@
 import { produtos } from "../js/lista_produto.js";
 
-
 const sectionCards = document.querySelector("#cards");
+const inputPesquisa = document.querySelector("#input-pesquisa");
 
-const listarProdutos = () => {
-    produtos.forEach((elem,i)=> {
-        const divCards = document.createElement('div');
-    divCards.setAttribute('class','card')
+// ===============================
+// Cria um card
+// ===============================
 
-    const imgCard = document.createElement('img');
-    imgCard.setAttribute('src', elem.caminho_imagem);
-    imgCard.setAttribute('alt',elem.descricao_produto);
+function criarCard(produto) {
 
-    const pCard = document.createElement('P');
-    pCard.innerHTML = elem.descricao_produto;
+    const card = document.createElement("div");
+    card.classList.add("card");
 
-    const h2Card = document.createElement('h2')
-    h2Card.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.',',')}`
+    card.innerHTML = `
+        <img src="${produto.imagem}" alt="${produto.nome}">
 
-    const btnCard = document.createElement('button');
-    btnCard.setAttribute('class','btn-add')
-    btnCard.innerHTML = 'Adicionar'
+        <h3>${produto.nome}</h3>
 
-    divCards.appendChild(imgCard)
-    divCards.appendChild(pCard)
-    divCards.appendChild(h2Card)
-    divCards.appendChild(btnCard)
+        <p class="descricao">
+            ${produto.anime}
+        </p>
 
-    sectionCards.appendChild(divCards)
+        <h2>
+            R$ ${produto.preco.toFixed(2).replace(".", ",")}
+        </h2>
 
-    
+        <button class="btn-add" data-id="${produto.id}">
+            Adicionar
+        </button>
+    `;
 
-    })
+    return card;
+}
 
+// ===============================
+// Lista os produtos
+// ===============================
+
+function listarProdutos(listaProdutos) {
+
+    sectionCards.innerHTML = "";
+
+    listaProdutos.forEach(produto => {
+
+        const card = criarCard(produto);
+
+        sectionCards.appendChild(card);
+
+    });
 
 }
 
-listarProdutos();
+// ===============================
+// Pesquisa
+// ===============================
+
+function pesquisarProdutos() {
+
+    const texto = inputPesquisa.value.toLowerCase().trim();
+
+    const resultado = produtos.filter(produto =>
+
+        produto.nome.toLowerCase().includes(texto) ||
+
+        produto.anime.toLowerCase().includes(texto)
+
+    );
+
+    listarProdutos(resultado);
+
+}
+
+// ===============================
+// Eventos
+// ===============================
+
+inputPesquisa.addEventListener("input", pesquisarProdutos);
+
+// ===============================
+// Inicialização
+// ===============================
+
+listarProdutos(produtos);
