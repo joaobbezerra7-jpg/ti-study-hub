@@ -1,84 +1,184 @@
 import { produtos } from "../js/lista_produto.js";
 
-const sectionCards = document.querySelector("#cards");
+const cards = document.querySelector("#cards");
 const inputPesquisa = document.querySelector("#input-pesquisa");
+const categorias = document.querySelectorAll("#menu-secoes a");
 
-// ===============================
-// Cria um card
-// ===============================
+// =========================
+// Estado dos filtros
+// =========================
 
-function criarCard(produto) {
+const filtros = {
+    pesquisa: "",
+    anime: "Todos"
+};
 
-    const card = document.createElement("div");
-    card.classList.add("card");
+// =========================
+// Renderizar produtos
+// =========================
 
-    card.innerHTML = `
-        <img src="${produto.imagem}" alt="${produto.nome}">
+function mostrarProdutos(lista) {
 
-        <h3>${produto.nome}</h3>
+    cards.innerHTML = "";
 
-        <p class="descricao">
-            ${produto.anime}
-        </p>
+    if (lista.length === 0) {
 
-        <h2>
-            R$ ${produto.preco.toFixed(2).replace(".", ",")}
-        </h2>
+        cards.innerHTML = "<h2>Nenhum produto encontrado.</h2>";
+        return;
 
-        <button class="btn-add" data-id="${produto.id}">
-            Adicionar
-        </button>
-    `;
+    }
 
-    return card;
-}
+    lista.forEach(produto => {
 
-// ===============================
-// Lista os produtos
-// ===============================
+        const card = document.createElement("div");
+        card.className = "card";
 
-function listarProdutos(listaProdutos) {
+        card.innerHTML = `
+            <img src="${produto.imagem}" alt="${produto.nome}">
 
-    sectionCards.innerHTML = "";
+            <h3>${produto.nome}</h3>
 
-    listaProdutos.forEach(produto => {
+            <p>${produto.anime}</p>
 
-        const card = criarCard(produto);
+            <h2>
+                R$ ${produto.preco.toFixed(2).replace(".", ",")}
+            </h2>
 
-        sectionCards.appendChild(card);
+            <button
+                class="btn-add"
+                data-id="${produto.id}">
+                Adicionar
+            </button>
+        `;
+
+        cards.appendChild(card);
+
+        // Evento do botão
+
+        const botao = card.querySelector(".btn-add");
+
+        botao.addEventListener("click", () => {
+
+            adicionarAoCarrinho(produto.id);
+
+        });
 
     });
 
 }
 
-// ===============================
-// Pesquisa
-// ===============================
+// =========================
+// Aplicar filtros
+// =========================
 
-function pesquisarProdutos() {
+function aplicarFiltros() {
 
-    const texto = inputPesquisa.value.toLowerCase().trim();
+    let resultado = [...produtos];
 
-    const resultado = produtos.filter(produto =>
+    // Pesquisa
 
-        produto.nome.toLowerCase().includes(texto) ||
+    if (filtros.pesquisa !== "") {
 
-        produto.anime.toLowerCase().includes(texto)
+        resultado = resultado.filter(produto =>
 
-    );
+            produto.nome
+                .toLowerCase()
+                .includes(filtros.pesquisa.toLowerCase())
 
-    listarProdutos(resultado);
+        );
+
+    }
+
+    // Categoria
+
+    if (filtros.anime !== "Todos") {
+
+        resultado = resultado.filter(produto =>
+
+            produto.anime === filtros.anime
+
+        );
+
+    }
+
+    mostrarProdutos(resultado);
 
 }
 
-// ===============================
-// Eventos
-// ===============================
+// =========================
+// Adicionar ao carrinho
+// =========================
 
-inputPesquisa.addEventListener("input", pesquisarProdutos);
+function adicionarAoCarrinho(idProduto) {
 
-// ===============================
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    const produtoExistente = carrinho.find(
+
+        item => item.id === idProduto
+
+    );
+
+    if (produtoExistente) {
+
+        produtoExistente.quantidade++;
+
+    } else {
+
+        carrinho.push({
+
+            id: idProduto,
+
+            quantidade: 1
+
+        });
+
+    }
+
+    localStorage.setItem(
+
+        "carrinho",
+
+        JSON.stringify(carrinho)
+
+    );
+
+   
+
+}
+
+// =========================
+// Pesquisa
+// =========================
+
+inputPesquisa.addEventListener("input", (event) => {
+
+    filtros.pesquisa = event.target.value;
+
+    aplicarFiltros();
+
+});
+
+// =========================
+// Categorias
+// =========================
+
+categorias.forEach(link => {
+
+    link.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        filtros.anime = link.dataset.anime;
+
+        aplicarFiltros();
+
+    });
+
+});
+
+// =========================
 // Inicialização
-// ===============================
+// =========================
 
-listarProdutos(produtos);
+mostrarProdutos(produtos);
