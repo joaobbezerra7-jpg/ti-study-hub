@@ -8,124 +8,147 @@
 
     <title>Carrinho | Anime Store</title>
 
+    <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/carrinho.css">
+
+    <script src="../js/carrinho.js" type="module" defer></script>
 
 </head>
 
 <body>
 
-<header id="cabecalho">
+    <!-- ========================= -->
+    <!-- Cabeçalho                 -->
+    <!-- ========================= -->
 
-    <div id="logo">
-        Anime Store
-    </div>
+    <header id="cabecalho">
 
-    <nav id="menu">
+        <div id="logo">
+            Anime Store
+        </div>
 
-        <ul>
+        <nav id="menu">
 
-            <li><a href="form.html">Cadastro</a></li>
+            <ul>
 
-            <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="form.html">Cadastro</a></li>
 
-            <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
 
-            <li><a href="carrinho.html">🛒 Carrinho</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
 
-        </ul>
+                <li><a href="carrinho.html">🛒 Carrinho</a></li>
 
-    </nav>
+            </ul>
 
-</header>
+        </nav>
 
+    </header>
 
-<main>
+    <!-- ========================= -->
+    <!-- Banner                    -->
+    <!-- ========================= -->
 
-<section class="banner">
+    <main>
 
-    <h1>🛒 Meu Carrinho</h1>
+        <section class="banner">
 
-    <p>
-        Confira seus produtos antes de finalizar a compra.
-    </p>
+            <h1>🛒 Meu Carrinho</h1>
 
-</section>
+            <p>
+                Confira seus produtos antes de finalizar sua compra.
+            </p>
 
+        </section>
 
-<section class="container">
+        <!-- ========================= -->
+        <!-- Carrinho                  -->
+        <!-- ========================= -->
 
-    <section id="itens-carrinho">
+        <section class="container">
 
-        <article class="item">
+            <!-- Produtos -->
 
-            <img src="../images/0two.jpg" alt="Zero Two">
+            <section id="itens-carrinho">
 
-            <div class="info">
+                <!--
+                    Os produtos serão criados
+                    automaticamente pelo carrinho.js
+                -->
 
-                <h3>Zero Two</h3>
+            </section>
 
-                <p>Darling in the Franxx</p>
+            <!-- Resumo -->
 
-                <span>R$ 100,00</span>
+            <aside id="resumo">
 
-            </div>
+                <h2>Resumo da Compra</h2>
 
-            <div class="quantidade">
+                <div class="linha-resumo">
 
-                <label>Qtd.</label>
+                    <span>Produtos</span>
 
-                <input type="number" value="1" min="1">
+                    <span id="valor-produtos">
 
-            </div>
+                        R$ 0,00
 
-            <div class="subtotal">
+                    </span>
 
-                <strong>Subtotal</strong>
+                </div>
 
-                <p>R$ 100,00</p>
+                <div class="linha-resumo">
 
-                <button>Remover</button>
+                    <span>Frete</span>
 
-            </div>
+                    <span>
 
-        </article>
+                        Grátis
 
-    </section>
+                    </span>
 
+                </div>
 
+                <hr>
 
-    <aside id="resumo">
+                <div class="linha-resumo total">
 
-        <h2>Resumo da Compra</h2>
+                    <span>Total</span>
 
-        <p>Produtos <span>R$ 100,00</span></p>
+                    <span id="valor-total">
 
-        <p>Frete <span>Grátis</span></p>
+                        R$ 0,00
 
-        <hr>
+                    </span>
 
-        <h3>Total <span>R$ 100,00</span></h3>
+                </div>
 
-        <button>
+                <button id="btn-finalizar">
 
-            Finalizar Compra
+                    Finalizar Compra
 
-        </button>
+                </button>
 
-    </aside>
+            </aside>
 
-</section>
+        </section>
 
-</main>
+    </main>
 
+    <!-- ========================= -->
+    <!-- Rodapé                    -->
+    <!-- ========================= -->
 
-<footer id="rodape">
+    <footer id="rodape">
 
-    <h3>© 2026 Anime Store</h3>
+        <h3>© 2026 Anime Store</h3>
 
-    <p>Pagamento via Pix, Cartão e Boleto.</p>
+        <p>
 
-</footer>
+            Pagamento via Pix, Cartão e Boleto.
+
+        </p>
+
+    </footer>
 
 </body>
 

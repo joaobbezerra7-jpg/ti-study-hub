@@ -13,7 +13,7 @@ font-family:Roboto,sans-serif;
 
 :root{
 
---principal:#323dd3;
+--principal:#9832d3;
 --secundaria:#faa638;
 --fundo:#f5f5f5;
 
@@ -167,7 +167,7 @@ font-size:18px;
 /* CATEGORIAS */
 
 
-.categorias{
+#secoes{
 
 display:flex;
 
@@ -183,7 +183,7 @@ margin-bottom:40px;
 
 
 
-.categorias button{
+#menu-secoes li{
 
 
 padding:10px 20px;
@@ -203,7 +203,7 @@ box-shadow:0 3px 8px #ccc;
 
 
 
-.categorias button:hover{
+#secoes button:hover{
 
 background:var(--principal);
 
