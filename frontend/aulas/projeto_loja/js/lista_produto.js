@@ -3,7 +3,7 @@ export const produtos = [
         id: 1,
         nome: "Zero Two",
         anime: "Darling in the Franxx",
-        preco: 100,
+        preco: 120,
         imagem: "../images/0two.jpg"
     },
     {
