@@ -3,58 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudos</title>
-    <style>
-        
-        h1{text-align: center;}
-    
-         .container {
-            border: 1px solid black;
-            background-color: lightgray;
-            width: 900px;
-            height: 600px;
-            
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 20px;
-
-            /*
-            Repeat com 2 parametros, primeiro cria 4 colunas,o segundo a proporção do espaço disponivel que cada uma ocupa
-            Gap sendo usado no lugar de margin
-            */
-
-
-        }
-        .item{
-            border: 1px solid black;
-            background-color: lightblue;
-            height: 30px;
-            width: auto;
-
-    
-        }
-
-        
-
-
-    </style>
+    <title>Document</title>
 </head>
-<body>
-     <h1>Estudos Frontend</h1>
-    <hr>
-    <div class="container">
-        <div class="item">Item 1</div>
-        <div class="item">Item 2</div>
-        <div class="item">Item 3</div>
-        <div class="item">Item 4</div>
-         <div class="item">Item 5</div>
-        <div class="item">Item 6</div>
-        <div class="item">Item 7</div>
-        <div class="item">Item 8</div>
-        
-    </div> 
 
+<style>
+    .titulo-principal{
+        text-align: center;
+    }
+
+    .caixa {
+    width: 200px;
+    height: 100px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.destaque {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+}
+
+</style>
+<body>
     
+    <form id="formulario">
+
+<input 
+id="nome"
+type="text"
+placeholder="Digite seu nome">
+
+<button type="submit">
+Enviar
+</button>
+
+</form>
+
+<h2 id="mensagem"></h2>
+
+<script>
+    setTimeout(()=>{
+        console.log("dps de 5 seg");
+    }, 5000)
+
+</script>
 
 </body>
 </html>
