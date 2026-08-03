@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerenciador de Tarefas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="titulo-pagina">GERENCIADOR DE TAREFAS</h1>
+
+  <div class="topo">
+
+    <!-- Formulário -->
+    <form id="formTarefa" class="painel-form">
+      <input type="text" id="tarefa" placeholder="Tarefa" required>
+      <input type="text" id="responsavel" placeholder="Responsável" required>
+      <textarea id="descricao" placeholder="Descrição" required></textarea>
+
+      <div class="linha-prioridade">
+        <span class="label-prioridade">Prioridade</span>
+        <label><input type="radio" name="prioridade" value="Baixa" required> Baixa</label>
+        <label><input type="radio" name="prioridade" value="Média"> Média</label>
+        <label><input type="radio" name="prioridade" value="Alta"> Alta</label>
+      </div>
+
+      <label class="label-data">Data Tarefa</label>
+      <input type="date" id="dataTarefa" required>
+
+      <button type="submit" id="btnAdicionar">ADICIONAR TAREFA</button>
+    </form>
+
+    <!-- Contadores de status -->
+    <div class="contadores-status">
+      <div class="caixa-status" id="caixaAberto">
+        <span>Aberto</span>
+        <strong id="qtdAberto">0</strong>
+      </div>
+      <div class="caixa-status" id="caixaAndamento">
+        <span>Em Andamento</span>
+        <strong id="qtdAndamento">0</strong>
+      </div>
+      <div class="caixa-status" id="caixaFinalizada">
+        <span>Finalizada</span>
+        <strong id="qtdFinalizada">0</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contadores de prioridade -->
+  <div class="contadores-prioridade">
+    <div class="caixa-prioridade baixa">BAIXA <span id="qtdBaixa">0</span></div>
+    <div class="caixa-prioridade media">MÉDIA <span id="qtdMedia">0</span></div>
+    <div class="caixa-prioridade alta">ALTA <span id="qtdAlta">0</span></div>
+  </div>
+
+  <!-- Quadro Kanban -->
+  <div class="quadro">
+    <div class="coluna">
+      <h2>Aberto</h2>
+      <div class="lista-cards" id="col-aberto"></div>
+    </div>
+    <div class="coluna">
+      <h2>Em Andamento</h2>
+      <div class="lista-cards" id="col-andamento"></div>
+    </div>
+    <div class="coluna">
+      <h2>Finalizada</h2>
+      <div class="lista-cards" id="col-finalizada"></div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

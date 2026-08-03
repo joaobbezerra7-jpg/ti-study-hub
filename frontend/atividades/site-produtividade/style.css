@@ -1,0 +1,258 @@
+:root{
+  --azul: #052945;
+  --cinza: #f7f6f5;
+  --branco: #ffffff;
+  --verde: #4caf50;
+  --amarelo: #ffc107;
+  --vermelho: #f44336;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body{
+  background-color: var(--cinza);
+  padding: 30px 5%;
+}
+
+.titulo-pagina{
+  text-align: center;
+  color: var(--azul);
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+/* ---------- TOPO: form + contadores de status ---------- */
+.topo{
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.painel-form{
+  background-color: var(--azul);
+  color: var(--branco);
+  padding: 25px;
+  border-radius: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.painel-form input[type="text"],
+.painel-form textarea,
+.painel-form input[type="date"]{
+  border: none;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: #222;
+}
+
+.painel-form textarea{
+  min-height: 90px;
+  resize: vertical;
+}
+
+.linha-prioridade{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.label-prioridade{
+  font-weight: bold;
+}
+
+.linha-prioridade label{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.label-data{
+  font-weight: bold;
+}
+
+#btnAdicionar{
+  margin-top: 5px;
+  background-color: var(--branco);
+  color: var(--azul);
+  border: none;
+  padding: 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+#btnAdicionar:hover{
+  opacity: 0.85;
+}
+
+/* ---------- Contadores de status (Aberto / Andamento / Finalizada) ---------- */
+.contadores-status{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 170px;
+}
+
+.caixa-status{
+  background-color: var(--azul);
+  color: var(--branco);
+  flex: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.caixa-status span{
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.caixa-status strong{
+  font-size: 26px;
+  margin-top: 4px;
+}
+
+/* ---------- Contadores de prioridade ---------- */
+.contadores-prioridade{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.caixa-prioridade{
+  padding: 25px;
+  border-radius: 6px;
+  color: var(--branco);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.caixa-prioridade.baixa{ background-color: var(--verde); }
+.caixa-prioridade.media{ background-color: var(--amarelo); color: #3a2e00; }
+.caixa-prioridade.alta{ background-color: var(--vermelho); }
+
+/* ---------- Quadro Kanban ---------- */
+.quadro{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.coluna h2{
+  color: var(--azul);
+  text-align: center;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--azul);
+}
+
+.lista-cards{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ---------- Cards ---------- */
+.card{
+  background-color: var(--branco);
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+  border-left: 8px solid var(--azul);
+}
+
+.card.prioridade-baixa{ border-left-color: var(--verde); }
+.card.prioridade-media{ border-left-color: var(--amarelo); }
+.card.prioridade-alta{ border-left-color: var(--vermelho); }
+
+.card h3{
+  color: var(--azul);
+  margin-bottom: 6px;
+}
+
+.card h2{
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.card p{
+  font-size: 14px;
+  color: #333;
+  margin: 8px 0;
+}
+
+.card .texto-prioridade.prioridade-baixa{ color: var(--verde); }
+.card .texto-prioridade.prioridade-media{ color: #b48400; }
+.card .texto-prioridade.prioridade-alta{ color: var(--vermelho); }
+
+.card-links{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.card-links a{
+  font-size: 13px;
+  color: var(--azul);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.card-remover{
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.card-remover a{
+  color: var(--vermelho);
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.vazio{
+  color: #888;
+  font-style: italic;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px){
+  .topo{
+    flex-direction: column;
+  }
+  .contadores-status{
+    flex-direction: row;
+    width: 100%;
+  }
+  .contadores-prioridade,
+  .quadro{
+    grid-template-columns: 1fr;
+  }
+}
