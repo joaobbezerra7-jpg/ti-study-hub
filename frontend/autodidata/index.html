@@ -4,57 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
-        .container {
 
-            width: 800px;
-            height: 500px;
-            margin: 0 auto;
-            border: solid 2px;
-            background-color: lightblue;
-
-            display: grid;
-            grid-template-columns: repeat(3,100px);
-            grid-template-rows: repeat(3,100px);
-            justify-items: center;
-            align-items: center;
-           
-            
-           
-        }
-        .item{
-            border: solid 2px;
-            background-color: antiquewhite;
-            width: 40px;
-            height: 40px;
-            
-        }
-
-        
+    .concluida{
+        text-decoration: line-through;
+        opacity: 0.5;
+    }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">4</div>
-        <div class="item">5</div>
-        <div class="item">6</div>
-        <div class="item">7</div>
-        <div class="item">8</div>
-        <div class="item">9</div>
-       
-      
-      
+    
+    <input id="tarefa" placeholder="Digite uma tarefa">
+
+<button id="adicionar">
+    Adicionar
+</button>
+
+<h3>Tarefas: <span id="t"></span></h3>
+<h3>Concluidas: <span id="c"></span></h3>
+
+<ul id="lista">
+
+</ul>
     
     <script>
+const input = document.querySelector("#tarefa");
+const btnAdd = document.querySelector("#adicionar");
+const li = document.querySelector("#lista");
+const t = document.querySelector("#t");
+const c = document.querySelector("#c");
+
+let id = 0;
+
+const tarefas = [];
+const concluida = document.querySelectorAll('.concluida').length;
+
+
+btnAdd.addEventListener('click',()=>{
+    const elem = document.createElement("li");
+    elem.textContent = input.value;
+    elem.dataset.id = id++; // não entendi mt bem o uso de dataset ainda
+    li.appendChild(elem);
+    tarefas.push(elem);
+    t.textContent = tarefas.length;
+    c.textContent = concluida.length;
+    console.log(typeof elem);
+
+
+    const btnConcluir = document.createElement("button");
+    btnConcluir.textContent = "Concluir";
+    elem.appendChild(btnConcluir);
+    console.log(tarefas.indexOf(elem));
+
+    const btnRemover = document.createElement("button");
+    btnRemover.textContent = "Remover";
+    elem.appendChild(btnRemover)
+
+
+    btnConcluir.addEventListener('click',()=>{
+        elem.classList.toggle('concluida');
+        
+       
+    })
+
+    btnRemover.addEventListener('click',()=>{
+        elem.remove();
+        const i = tarefas.indexOf(elem);
+        tarefas.splice(i,1);
+        
+    })
+});
+
+
+
+
+
 
     
         
     </script>
-
 </body>
 </html>
