@@ -4,52 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        h1{
+            text-align: center;
+            color: rgb(6, 6, 190);
+        }
+
+        #main-card  > h2,h3{
+            color: aliceblue;
+        }
+
+
+
+        input[type="text"],input[type="date"], textarea{
+            display: block;
+        }
+       
+        #main-card{
+            border: solid 2px;
+            background-color: #052945;
+            
+        }
+
+        label{
+            color: aliceblue;
+        }
+
+
+    </style>
 </head>
-
-<style>
-    .titulo-principal{
-        text-align: center;
-    }
-
-    .caixa {
-    width: 200px;
-    height: 100px;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.destaque {
-    background-color: gold;
-    color: black;
-    font-weight: bold;
-}
-
-</style>
 <body>
+<h1>Gerenciador de Tarefas</h1>
+<hr>
+
+<div id="main-card">
+    <form>
+        <input type="text" placeholder="Tarefa" col="92">
+        <input type="text" placeholder="Responsável">
+        <textarea rows="10" cols="92" placeholder="Descrição"></textarea>
+
+        <h3>Prioridade</h3>
+        <input type="radio"> <label for="">Baixa</label>
+        <input type="radio"> <label for="">Média</label>
+        <input type="radio"> <label for="">Alta</label>
+
+        <h3>Data Tarefa</h3>
+        <input type="date" name="" id="">
+
+        <button> Adicionar tarefa</button>
+    </form>
+    </div>
+
+    <div id="baixa">
+        Baixa:  1
+    </div>
+    <div id="media">
+        Media: 2
+    </div>
+    <div id="alta">
+        Alta:  3
+    </div>
+
+    <div class="aberto">
+        <h2>Aberto</h2>
+
+        <div class="card">
+            <h3>Tarefa aqui</h3>
+            <p>Descrição</p>
+            <p>Data entrega Tarefa</p>
+            <p>Data aqui</p>
+            <p>Valor da prioridade aqui</p>
+
+            <button>Em andamento</button>
+            <button>Finalizar</button>
+
+            <button>Remover</button>
+        </div>
+    </div>
+    <div class="andamento">
+        <h2>Em andamento</h2>
+    </div>
+    <div class="concluida">
+        <h2>Finalizada</h2>
+    </div>
     
-    <form id="formulario">
 
-<input 
-id="nome"
-type="text"
-placeholder="Digite seu nome">
 
-<button type="submit">
-Enviar
-</button>
 
-</form>
+    
+    <script>
 
-<h2 id="mensagem"></h2>
-
-<script>
-    setTimeout(()=>{
-        console.log("dps de 5 seg");
-    }, 5000)
-
-</script>
+    
+        
+    </script>
 
 </body>
 </html>
